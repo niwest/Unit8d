@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1= pageHeader.title
+  .row
+    .col-xs-12.col-md-6
+      form.form-horizontal(action="/location", method="get", role="form")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="name") Name
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="name")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="due") Due
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="due")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="points") Points
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="points")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="status") Status
+          .col-xs-12.col-sm-6
+            select#rating.form-control.input-sm(name="status")
+              option Not Started
+              option In Progress
+              option Done
+              option Submitted
+        button.btn.btn-default.pull-right Add this assignment
+    .col-xs-12.col-md-4

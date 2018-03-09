@@ -1,0 +1,27 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.page-header: .col-lg-12
+      h1= pageHeader.title
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          p Instructor:  #{pageHeader.professor}
+          p Credits:  #{pageHeader.credits}
+          p Time:  #{pageHeader.time}
+          button Add Assignment
+          small &nbsp;
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each assign in assignments
+          .col-xs-12.list-group-item
+              h4= assign.name
+              p= assign.due
+              p= assign.points
+              p= assign.status
+
+    .col-xs-12.col-md-3
